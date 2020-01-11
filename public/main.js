@@ -31,13 +31,13 @@ function startBomb() {
 
   bombTicking(secondsToTick).then(() => {
     if (bombRunning) {
+      tickSound.pause();
+      tickSound.currentTime = 0;
       bombRunning = false;
       setBackgroundColor("#FF4F29");
       changeBombLabel("<b style='color: white;font-size: 150%'>BOOOOOOM!</b>");
       console.log("Boom!");
       bombSound.play();
-      tickSound.pause();
-      tickSound.currentTime = 0;
     }
   });
 }
